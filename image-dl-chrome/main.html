@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Download images</title>
+    <style type="text/css">
+      body {
+        margin: 10px;
+      }
+
+      h1 {
+        font-size: 15px;
+      }
+
+      #image-grid {
+        width: 800px;
+        column-count: 3;
+        column-gap: 8px;
+      }
+
+      .selected {
+        border: 5px solid #0f0;
+        padding: 0px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .iw {
+        position: relative;
+      }
+      .iw .imgsize {
+        position: absolute;
+        bottom: 13px;
+        right: 5px;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        padding: 2px;
+      }
+      .iw img {
+        margin-bottom: 5px;
+        max-width: 100%;
+        padding: 5px;
+      }
+
+      #err {
+        color: #f00;
+      }
+
+      input[type="text"] {
+        width: 500px;
+        padding: 5px;
+        font-size: 1.2em;
+      }
+      header {
+        padding-bottom: 10px;
+      }
+    </style>
+
+    <script src="main.js"></script>
+  </head>
+
+  <body>
+    <h1>Download images</h1>
+    <div id="container">
+      <header>
+        <div id="err"></div>
+        <div>
+          <label for="filename">Filename: </label>
+          <input type="text" id="filename" />
+        </div>
+
+        <div>
+          <input type="checkbox" id="check-save-metadata" />
+          <label for="check-save-metadata">Save Metadata</label>
+        </div>
+
+        <div><button id="select-all">Select all</button></div>
+
+        <div><button id="download">Download</button></div>
+
+        <div>
+          Width:
+          <input
+            type="range"
+            min="0"
+            max="2000"
+            value="300"
+            id="minWidthSlider"
+          />
+          <span id="minWidth">300</span>
+        </div>
+        <div>
+          Height:
+          <input
+            type="range"
+            min="0"
+            max="2000"
+            value="300"
+            id="minHeightSlider"
+          />
+          <span id="minHeight">300</span>
+        </div>
+      </header>
+
+      <div id="image-grid"></div>
+    </div>
+  </body>
+</html>
